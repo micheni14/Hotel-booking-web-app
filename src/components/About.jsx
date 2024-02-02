@@ -46,7 +46,7 @@ const About = () => {
           </div>
         ))}
       </div>
-      <div className=" py-9 md:py-12 px-4 md:px-6">
+      <div className=" py-9 md:py-12 px- md:px-6">
         <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 lg:space-x-8">
           <div className="flex flex-col md:flex-row items-strech justify-between bg-gray-50 dark:bg-gray-800 py-6 px-6 md:py-12 lg:px-12 md:w-8/12 lg:w-7/12 xl:w-8/12 2xl:w-9/12">
             <div className="flex flex-col justify-center md:w-1/2">
