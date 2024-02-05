@@ -49,22 +49,22 @@ const About = () => {
       <div className="py-10 md:py-12 px-6 md:px-8">
         <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-8">
           {/* Browse through our offers */}
-          <div className="flex flex-col justify-center md:w-1/2 bg-white shadow-md py-8 px-8 md:py-12 lg:px-12 lg:w-10/12 xl:w-10/12 2xl:w-10/12">
+          <div className="flex flex-col justify-center md:w-1/2 bg-white shadow-md py-8 px-8 md:py-12 lg:px-12 lg:w-10/12 ">
             <h1 className="text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-gray-800">
               Explore Exclusive Deals
             </h1>
             <p className="text-lg lg:text-xl text-gray-800 dark:text-gray-800 mt-2">
               Save up to <span className="font-bold">50%</span>
             </p>
-            <button className="bg-blue-800 px-5 py-2 text-white rounded-md mt-4">
+            <button className="bg-blue-800 px-5 py-2 text-white rounded-md mt-4 w-96">
               View 2024 Deals
             </button>
           </div>
 
           {/* Take your longest holiday */}
-          <div className="py-10 md:py-12 px-6 md:px-8 md:w-1/2">
+          <div className="py-10 md:py-12 px-6 md:px-8 md:w-1/2 ">
             <div
-              className="w-full h-full bg-red-900 dark:bg-red-900 shadow-md py-8 px-8 md:py-0 md:px-6 lg:px-8 flex flex-col justify-center relative"
+              className="w-full h-full shadow-md py-8 px-8 md:py-0 md:px-6 lg:px-8 flex flex-col justify-center relative"
               style={{
                 backgroundImage: `url(${image3})`,
                 backgroundSize: "cover",

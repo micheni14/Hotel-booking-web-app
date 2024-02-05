@@ -1,6 +1,7 @@
 import React from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 
+
 const Navbar = () => {
   return (
     <div className="bg-white w-full shadow-md">

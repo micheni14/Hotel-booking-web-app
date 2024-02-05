@@ -3,6 +3,7 @@ import image2 from "../assets/image2.jpg";
 import { IoBedOutline } from "react-icons/io5";
 import { MdOutlineBathtub } from "react-icons/md";
 import { FaWifi, FaShuttleVan } from "react-icons/fa";
+import {Link} from "react-router-dom"
 
 const SpecialOffer = [
   {
@@ -49,9 +50,8 @@ const SpecialOffers = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {SpecialOffer.map((offer, index) => (
-          <div
-            key={index}
-            className="card bg-base-100 shadow-xl cursor-pointer p-2 "
+          <Link key={index} to={`/details`}
+            className="card bg-base-100 shadow-xl cursor-pointer p-2 overflow-hidden rounded-md transition-transform transform hover:scale-105"
           >
             <figure>
               <img
@@ -61,7 +61,7 @@ const SpecialOffers = () => {
               />
             </figure>
             <div className="card-body p-4 ">
-              <div className="flex flex-cols justify-between">
+              <div className="flex flex-col justify-between">
                 <div className="font-bold text-xl">{offer.price}</div>
                 {offer.isNew && (
                   <div className="bg-gray-50 rounded-full p-2 text-blue-800 font-bold text-sm">
@@ -90,13 +90,13 @@ const SpecialOffers = () => {
               <h2 className="text-lg font-bold mb-2">{offer.title}</h2>
               <div className="card-actions justify-end">
                 {offer.categories.map((category, i) => (
-                  <div key={i} className="badge badge-outline">
+                  <div key={i} className="badge badge-outline border border-blue-800">
                     {category}
                   </div>
                 ))}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { IoLocationSharp } from "react-icons/io5";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer"
 const Details = () => {
   const photos = [
     {
@@ -25,8 +26,8 @@ const Details = () => {
   return (
     <>
       <Navbar />
-      <div className="flex justify-center mt-5">
-        <div className="w-full max-w-5xl flex flex-col gap-8 p-4">
+      <div className="container mx-auto  ">
+        <div className="w-full  flex flex-col gap-4 p-4">
           <h1 className="text-2xl font-bold ">Grand Hotel</h1>
 
           <div className="flex items-center gap-2 ">
@@ -54,7 +55,7 @@ const Details = () => {
             ))}
           </div>
 
-          <div className="flex justify-between gap-4 mt-4">
+          <div className="flex flex-col gap-4 mt-4 sm:flex-row">
             <div className="flex-1">
               <h2 className="text-lg font-bold mb-2">Stay Here</h2>
               <p className="text-sm">
@@ -84,6 +85,7 @@ const Details = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

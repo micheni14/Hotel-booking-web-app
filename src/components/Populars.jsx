@@ -1,5 +1,6 @@
 import React from "react";
 import image2 from "../assets/image2.jpg";
+import { Link } from "react-router-dom";
 
 const Popular = () => {
   const popularDestinations = [
@@ -52,9 +53,11 @@ const Popular = () => {
                 {destination.title}
               </h2>
               <p className="text-gray-600 mb-4">{destination.description}</p>
-              <button className="btn btn-wide bg-blue-900 text-white hover:bg-yellow-600">
+              <Link
+                to= "/details"
+                className="btn btn-wide bg-blue-900 text-white hover:bg-yellow-600">
                 View Details
-              </button>
+              </Link>
             </div>
           </div>
         ))}
