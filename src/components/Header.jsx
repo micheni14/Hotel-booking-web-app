@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { LuBedDouble } from "react-icons/lu";
 import { MdCalendarMonth } from "react-icons/md";
 import { FaPerson } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { format } from "date-fns";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const [destination, setDestination] = useState("");
   const [openDate, setopenDate] = useState(false);
   const [date, setDate] = useState([
     {
@@ -25,6 +26,8 @@ const Header = () => {
     room: 1,
   });
 
+  const navigate = useNavigate();
+
   const handleOption = (name, operation) => {
     setOptions((prev) => {
       return {
@@ -32,6 +35,10 @@ const Header = () => {
         [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
       };
     });
+  };
+
+  const handleSearch = () => {
+    navigate("/amenities", { state: { destination, date, options } });
   };
 
   return (
@@ -43,13 +50,14 @@ const Header = () => {
         <p className="text-md pt-6 text-white">
           Search deals on hotels, vacation homes, and much more..
         </p>
-        <div className="h-16 bg-white border-4 border-solid border-yellow-500 flex items-center justify-around  rounded-md w-full    ">
+        <div className="h-16 bg-white border-4 border-solid border-yellow-500 flex items-center justify-around  rounded-md w-full ">
           <div className="flex items-center gap-4 border-r-4 border-yellow-500 ">
             <LuBedDouble size={24} />
             <input
               type="text"
-              placeholder="Where are you going?"
+              placeholder="where are you going"
               className="border-none outline-none"
+              onChange={(e) => setDestination(e.target.value)}
             />
           </div>
           <div className="flex items-center gap-4 border-r-4 border-yellow-500 px-4 z-20">
@@ -147,8 +155,10 @@ const Header = () => {
             )}
           </div>
 
-          <button className="bg-blue-800 flex items-center text-white rounded-md px-6 py-2 ">
-            {/* <FaArrowRight size={36} className='ml-2' /> */}
+          <button
+            onClick={handleSearch}
+            className="bg-blue-800 flex items-center text-white rounded-md px-6 py-2 "
+          >
             <p>Search</p>
           </button>
         </div>
