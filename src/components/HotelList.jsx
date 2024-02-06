@@ -4,7 +4,7 @@ import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { format } from "date-fns";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
 // import { useLocation } from "react-router-dom";
 const HotelList = () => {
   const [openDate, setopenDate] = useState(false);
@@ -25,8 +25,8 @@ const HotelList = () => {
   return (
     <>
       <div className=" container mx-auto pt-4 pb-4 md:pb-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-          <div className="card  md:w-96 bg-blue-800 flex-1 top-2.5 md:sticky md:order-first order-last h-max   ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="card   bg-blue-800 flex-1 top-2.5 md:sticky md:order-first order-last h-max   ">
             <div className="card-body space-y-1">
               <h2 className="card-title text-2l subpixel-antialiased	text-white	 uppercase">
                 Search
@@ -116,7 +116,7 @@ const HotelList = () => {
               </button>
             </div>
           </div>
-          
+
           <div className="col-span-2">
             <div className="border border-solid border-gray-300 outline-none p-2  rounded-md flex justify-between gap-5  mb-5 font-medium bg-gray-50">
               <img
@@ -335,9 +335,8 @@ const HotelList = () => {
             </div>
           </div>
         </div>
-       
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

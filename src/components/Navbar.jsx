@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { RxHamburgerMenu } from 'react-icons/rx';
-import { IoClose } from 'react-icons/io5';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { IoClose } from "react-icons/io5";
 
 const Navbar = () => {
   const [isNavbarScrolled, setIsNavbarScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
         setIsNavbarScrolled(true);
       } else {
@@ -26,8 +26,8 @@ const Navbar = () => {
       <div
         className={
           isNavbarScrolled
-            ? 'fixed bg-white w-full shadow-md z-20'
-            : 'bg-white w-full shadow-md'
+            ? "fixed bg-white w-full shadow-md z-20"
+            : "bg-white w-full shadow-md"
         }
       >
         <div className="container mx-auto flex px-12 md:px-0  justify-between  items-center h-20">
@@ -52,13 +52,13 @@ const Navbar = () => {
             <div className="sm:hidden">
               {menuOpen ? (
                 <IoClose
-                size={36}
+                  size={36}
                   className="text-gray-600 cursor-pointer"
                   onClick={toggleMenu}
                 />
               ) : (
-                  <RxHamburgerMenu
-                    size={36}
+                <RxHamburgerMenu
+                  size={36}
                   className="text-gray-600 cursor-pointer "
                   onClick={toggleMenu}
                 />
@@ -70,21 +70,20 @@ const Navbar = () => {
 
       {/* Responsive Menu */}
       {menuOpen && (
-  <div className="sm:hidden fixed top-20 z-[50] left-6 right-6   w-96 mt-8 rounded-md bg-red-500 py-8 drop-shadow-xl">
-    <div className="container mx-auto flex flex-col items-center justify-center">
-      <p className=" text-lg md:text-sm text-white hover:text-blue-600 font-semibold cursor-pointer mb-4">
-        List your property
-      </p>
-      <button className="text-sm text-blue-800 md:text-blue-800 bg-white md:bg-transparent px-4 py-2 rounded-full font-semibold cursor-pointer border-2 border-blue-800 mb-2">
-        Sign up
-      </button>
-      <button className="text-sm text-white bg-blue-800 px-4 py-2 rounded-full font-semibold cursor-pointer">
-        Login
-      </button>
-    </div>
-  </div>
-)}
-
+        <div className="sm:hidden fixed top-20 z-[50] left-6 right-6   w-96 mt-8 rounded-md bg-red-500 py-8 drop-shadow-xl">
+          <div className="container mx-auto flex flex-col items-center justify-center">
+            <p className=" text-lg md:text-sm text-white hover:text-blue-600 font-semibold cursor-pointer mb-4">
+              List your property
+            </p>
+            <button className="text-sm text-blue-800 md:text-blue-800 bg-white md:bg-transparent px-4 py-2 rounded-full font-semibold cursor-pointer border-2 border-blue-800 mb-2">
+              Sign up
+            </button>
+            <button className="text-sm text-white bg-blue-800 px-4 py-2 rounded-full font-semibold cursor-pointer">
+              Login
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };

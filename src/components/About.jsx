@@ -46,38 +46,35 @@ const About = () => {
           </div>
         ))}
       </div>
-      <div className="py-10 md:py-12 px-6 md:px-8">
-        <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-8">
-          {/* Browse through our offers */}
-          <div className="flex flex-col justify-center md:w-1/2 bg-white shadow-md py-8 px-8 md:py-12 lg:px-12 lg:w-10/12 ">
-            <h1 className="text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-gray-800">
-              Explore Exclusive Deals
-            </h1>
-            <p className="text-lg lg:text-xl text-gray-800 dark:text-gray-800 mt-2">
-              Save up to <span className="font-bold">50%</span>
-            </p>
-            <button className="bg-blue-800 px-5 py-2 text-white rounded-md mt-4 w-96">
-              View 2024 Deals
-            </button>
-          </div>
-
-          {/* Take your longest holiday */}
-          <div className="py-10 md:py-12 px-6 md:px-8 md:w-1/2 ">
+      <div className=" py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="flex flex-col justify-center items-center bg-white shadow-lg p-6 md:p-8 lg:p-10 rounded-lg">
+              <h2 className="text-2xl lg:text-3xl font-semibold text-gray-800 mb-4 text-center">
+                Explore Exclusive Deals
+              </h2>
+              <p className="text-lg lg:text-xl text-gray-600 mb-6 text-center">
+                Save up to <span className="font-bold text-blue-600">50%</span>{" "}
+                on selected offers.
+              </p>
+              <button className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 lg:px-8 rounded-md text-lg font-semibold">
+                View 2024 Deals
+              </button>
+            </div>
             <div
-              className="w-full h-full shadow-md py-8 px-8 md:py-0 md:px-6 lg:px-8 flex flex-col justify-center relative"
-              style={{
-                backgroundImage: `url(${image3})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
+              className="relative bg-cover bg-center rounded-lg overflow-hidden"
+              style={{ backgroundImage: `url(${image3})` }}
             >
-              <div className="flex flex-col items-center justify-center text-white">
-                <h1 className="text-2xl lg:text-3xl font-semibold">
-                  Your Dream Getaway
-                </h1>
-                <p className="text-lg lg:text-xl">
-                  Save up to <span className="font-bold">30%</span>
-                </p>
+              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
+                <div className="text-center text-white p-6 md:p-8 lg:p-10">
+                  <h2 className="text-3xl lg:text-4xl font-semibold mb-4">
+                    Your Dream Getaway
+                  </h2>
+                  <p className="text-lg lg:text-xl mb-6">
+                    Save up to <span className="font-bold">30%</span> on your
+                    next adventure.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
