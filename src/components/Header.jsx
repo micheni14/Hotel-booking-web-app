@@ -8,6 +8,7 @@ import "react-date-range/dist/theme/default.css";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 
+
 const Header = () => {
   const [destination, setDestination] = useState("");
   const [openDate, setopenDate] = useState(false);
@@ -50,8 +51,8 @@ const Header = () => {
         <p className="text-md pt-6 text-white">
           Search deals on hotels, vacation homes, and much more..
         </p>
-        <div className="h-16 bg-white border-4 border-solid border-yellow-500 flex items-center justify-around  rounded-md w-full ">
-          <div className="flex items-center gap-4 border-r-4 border-yellow-500 ">
+        <div className="md:h-16 bg-red-500 md:bg-white ml-8 md:ml-0 p-12 md:p-0   md:border-4 md:border-solid md:border-yellow-500   md:flex items-center justify-around  rounded-md w-max md:w-full space-y-4 md:space-y-0 ">
+          <div className="flex items-center gap-4 md:border-r-4 border-yellow-500 bg-white py-4 md:py-0 rounded-md   ">
             <LuBedDouble size={24} />
             <input
               type="text"
@@ -60,7 +61,7 @@ const Header = () => {
               onChange={(e) => setDestination(e.target.value)}
             />
           </div>
-          <div className="flex items-center gap-4 border-r-4 border-yellow-500 px-4 z-20">
+          <div className="flex items-center gap-4 md:border-r-4 border-yellow-500 px-4 z-20 bg-white py-4 md:py-0 rounded-md">
             <MdCalendarMonth />
             <span
               onClick={() => setopenDate(!openDate)}
@@ -81,7 +82,7 @@ const Header = () => {
               />
             )}
           </div>
-          <div className="flex items-center gap-4  z-20 ">
+          <div className="flex items-center gap-4  z-20 bg-white py-4 md:py-0 rounded-md">
             <FaPerson />
             <span
               onClick={() => setOpenOptions(!openOptions)}
@@ -148,7 +149,7 @@ const Header = () => {
                     </button>
                   </div>
                 </div>
-                <button className="bg-transparent text-blue-700 border-2 border-blue-700 rounded-md px-4 py-2 w-full p-4 hover:scale-105 hover:border-blue-600">
+                <button className="bg-transparent text-blue-700 border-2 border-blue-700 rounded-md px-4 py-2 w-full p-4 hover:scale-105 hover:border-blue-600  ">
                   Done
                 </button>
               </div>

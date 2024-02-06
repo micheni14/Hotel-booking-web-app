@@ -4,6 +4,19 @@ import { IoBedOutline } from "react-icons/io5";
 import { MdOutlineBathtub } from "react-icons/md";
 import { FaWifi, FaShuttleVan } from "react-icons/fa";
 import {Link} from "react-router-dom"
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import ".././App.css"
+
+
+
+// import required modules
+import { Pagination, Navigation, } from 'swiper/modules';
 
 const SpecialOffer = [
   {
@@ -36,10 +49,38 @@ const SpecialOffer = [
     shuttle: "Shuttle",
     categories: ["Bed and breakfast", "whole package"],
   },
+  
+  
 ];
 
 const SpecialOffers = () => {
   return (
+    <>
+    <Swiper
+    slidesPerView={1}
+    spaceBetween={10}
+    navigation={true}
+    pagination={{
+    clickable: true,
+    }}
+    breakpoints={{
+    640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+    },
+    768: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+    },
+    1024: {
+        slidesPerView: 4,
+        spaceBetween: 50,
+    },
+    }}
+        modules={[Pagination, Navigation]}
+    className="mySwiper"
+>
+  </Swiper>
     <div className="container mx-auto py-8">
       <div className="pb-8">
         <h1 className="text-3xl font-bold"> Special Offers</h1>
@@ -48,7 +89,8 @@ const SpecialOffers = () => {
           world.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="">
+        <SwiperSlide className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {SpecialOffer.map((offer, index) => (
           <Link key={index} to={`/details`}
             className="card bg-base-100 shadow-xl cursor-pointer p-2 overflow-hidden rounded-md transition-transform transform hover:scale-105"
@@ -98,8 +140,10 @@ const SpecialOffers = () => {
             </div>
           </Link>
         ))}
+             </SwiperSlide>
       </div>
-    </div>
+        </div>
+        </>
   );
 };
 
