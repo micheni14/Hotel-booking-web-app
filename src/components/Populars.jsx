@@ -54,8 +54,9 @@ const Popular = () => {
               </h2>
               <p className="text-gray-600 mb-4">{destination.description}</p>
               <Link
-                to= "/details"
-                className="btn btn-wide bg-blue-900 text-white hover:bg-yellow-600">
+                to={`/amenities`}
+                className="btn btn-wide bg-blue-900 text-white hover:bg-yellow-600"
+              >
                 View Details
               </Link>
             </div>
